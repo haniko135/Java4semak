@@ -1,5 +1,4 @@
-package ru.mirea.ikbo1319;
-import java.util.Comparator;
+package ru.mirea.ikbo1319.pr1;
 import java.util.ArrayList;
 import java.util.Random;
 import java.util.Scanner;
