@@ -27,9 +27,15 @@ public class HumanTest {
         Stream<Human> stream1 = members.stream();
         stream1.filter(member -> member.getAge() > 20).forEach(System.out::println);
 
+        Comparator<Human> compareNames = (mem1, mem2) -> {
+            char name1 = mem1.getFirstName().charAt(mem1.getFirstName().length() - 1);
+            char name2 = mem2.getFirstName().charAt(mem2.getFirstName().length() - 1);
+            return Character.compare(name1,name2);
+        };
+
         System.out.println(" ");
-        //Stream<Human> stream2 = members.stream();
-        //stream2.sorted(members.sort(Comparator.comparing(Human::getFirstName))).forEach(System.out::println);
+        Stream<Human> stream2 = members.stream();
+        stream2.sorted(compareNames).forEach(System.out::println);
 
         System.out.println(" ");
         Stream<Human> stream3 = members.stream();
@@ -37,7 +43,7 @@ public class HumanTest {
 
         System.out.println(" ");
         Stream<Human> stream4 = members.stream();
-        stream4.mapToInt(Human::getAge).average();
+        System.out.println(stream4.mapToInt(Human::getAge).average());
     }
 
 
