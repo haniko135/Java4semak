@@ -1,15 +1,18 @@
 package ru.mirea.ikbo1319.pr6.builder;
 
-public abstract class PupilBuilder {
+public class PupilBuilder {
     protected Pupil pupil;
+
+    public PupilBuilder() {
+        this.pupil = new Pupil();
+    }
 
     public Pupil getPupil() {
         return pupil;
     }
 
-    public void setPupil(Pupil pupil) {
-        this.pupil = new Pupil();
-    }
-
-    public abstract void status();
+    public PupilBuilder withStarosta(){
+        pupil.setTrait(new Starosta());
+        return this;
+    };
 }

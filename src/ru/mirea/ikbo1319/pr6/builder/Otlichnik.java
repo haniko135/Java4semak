@@ -11,7 +11,4 @@ public class Otlichnik {
         this.otlichnik = otlichnik;
     }
 
-    public void setDvoechnik(){
-        otlichnik.status();
-    }
 }
